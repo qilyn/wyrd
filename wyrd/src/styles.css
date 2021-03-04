@@ -1,29 +1,92 @@
 /* Application-wide Styles */
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Hind Siliguri", Arial, Helvetica, sans-serif;
     font-size: 1em;
+}
+@font-face {
+    font-family: "Homemade Apple";
+    src: local("Homemade Apple"), url(./assets/fonts/HomemadeApple-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "Hind Siliguri";
+    src: local("Hind Siliguri"), url(./assets/fonts/HindSiliguri-Regular.ttf) format("truetype");
 }
 body {
     background-color: black;
+    color: white;
+    text-shadow: 0px 0px 0px black;
     margin: 2em;
+    background-position: center;
 }
-h1 {
-    color: #369;
-    font-size: 250%;
+.background {
+    position: absolute;
+    bottom: 0px;
+    top: 0px; 
+    left: 0px;
+    right: 0px;
+    z-index: 0;
+    background-size: cover;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    background-image: url('./assets/img/bg.jpg');
+}
+h1, h1 i {
+    font-family: 'Homemade Apple', sans-serif;
+    color: black;
+    opacity: 0.8;
+    font-size: 1.5em;
 }
 h2, h3 {
     color: #444;
     font-weight: lighter;
 }
-body, input[type="text"], button {
-    color: #333;
-    font-family: Cambria, Georgia, serif;
+a {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgb(64,84,15,0.1);
+    border: 1px rgba(64,84,15,0.1) solid;
+    border-radius: 4px;
+    color: rgb(64,84,15);
+    transition:all 0.2s;
+}
+a:hover {
+    background-color: rgba(64,84,15,0.2);
+    border: 1px rgba(0,0,0,0.2) solid;
+}
+a:active {
+    color: greenyellow;
+}
+a.help {
+    border: none;
+    display: inline-flex;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    color: black!important;
+    cursor: help;
 }
 
 /** Custom element time */
+div.gradient {
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    height: 50%;
+    width: 100%;
+    opacity: 0.6;
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,1), white);
+}
 div.body {
     width: 50%;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
     box-sizing: border-box;
     margin-left: 20%;
-    color: grey;
+    color: rgba(50,50,50,1);
 }
