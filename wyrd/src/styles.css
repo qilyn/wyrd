@@ -11,6 +11,7 @@
     font-family: "Hind Siliguri";
     src: local("Hind Siliguri"), url(./assets/fonts/HindSiliguri-Regular.ttf) format("truetype");
 }
+
 body {
     background-color: black;
     color: white;
@@ -29,6 +30,7 @@ body {
     background-origin: border-box;
     background-repeat: no-repeat;
     background-blend-mode: lighten;
+    background-position: center bottom;
     background-image: url('./assets/img/bg.jpg');
 }
 h1, h1 i {
@@ -72,21 +74,30 @@ a.help {
 /** Custom element time */
 div.gradient {
     position: absolute;
-    z-index: 1;
     left: 0px;
     bottom: 0px;
     right: 0px;
-    height: 50%;
+    height: min-content;
     width: 100%;
     opacity: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(rgba(0,0,0,0), rgba(255,255,255,1), white);
 }
 div.body {
+    flex-basis: 1;
     width: 50%;
-    position: absolute;
-    bottom: 0px;
-    z-index: 1;
+    margin-top: 1vh;
+    height: min-content;
+    max-width: 800px;
     box-sizing: border-box;
-    margin-left: 20%;
     color: rgba(50,50,50,1);
+}
+@media only screen and (max-width: 768px) {
+    div.body {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: auto;
+    }
 }
